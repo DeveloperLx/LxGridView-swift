@@ -112,7 +112,7 @@ class LxGridViewCell: UICollectionViewCell {
             
             var _vibrating = false
         
-            if let animationKeys = iconImageView?.layer.animationKeys() {
+            if let animationKeys = layer.animationKeys() {
                 
                 _vibrating = contains(animationKeys as! [String], kVibrateAnimation)
             }
@@ -122,7 +122,7 @@ class LxGridViewCell: UICollectionViewCell {
             
             if _vibrating && !newValue {
             
-                iconImageView?.layer.removeAnimationForKey(kVibrateAnimation)
+                layer.removeAnimationForKey(kVibrateAnimation)
             }
             else if !_vibrating && newValue {
             
@@ -133,7 +133,7 @@ class LxGridViewCell: UICollectionViewCell {
                 vibrateAnimation.autoreverses = true
                 vibrateAnimation.duration = CFTimeInterval(VIBRATE_DURATION)
                 vibrateAnimation.repeatCount = Float(CGFloat.max)
-                iconImageView?.layer.addAnimation(vibrateAnimation, forKey: kVibrateAnimation)
+                layer.addAnimation(vibrateAnimation, forKey: kVibrateAnimation)
             }
         }
     }

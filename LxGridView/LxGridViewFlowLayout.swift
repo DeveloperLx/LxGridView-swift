@@ -242,6 +242,19 @@ class LxGridViewFlowLayout: UICollectionViewFlowLayout, UIGestureRecognizerDeleg
             _beingMovedPromptView?.addSubview(highlightedSnapshotView)
             collectionView?.addSubview(_beingMovedPromptView!)
             
+            let kVibrateAnimation = "kVibrateAnimation"
+            let VIBRATE_DURATION: CGFloat = 0.1
+            let VIBRATE_RADIAN = CGFloat(M_PI/96)
+            
+            let vibrateAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+            vibrateAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            vibrateAnimation.fromValue = -VIBRATE_RADIAN
+            vibrateAnimation.toValue = VIBRATE_RADIAN
+            vibrateAnimation.autoreverses = true
+            vibrateAnimation.duration = CFTimeInterval(VIBRATE_DURATION)
+            vibrateAnimation.repeatCount = Float(CGFloat.max)
+            _beingMovedPromptView?.layer.addAnimation(vibrateAnimation, forKey: kVibrateAnimation)
+            
             _sourceItemCollectionViewCellCenter = sourceGridViewCell.center
             
             UIView.animateWithDuration(0, delay: 0, options: .BeginFromCurrentState, animations: { () -> Void in
