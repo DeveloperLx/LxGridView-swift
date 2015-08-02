@@ -63,9 +63,6 @@
 				B6BE3CEC1B42F5570017B91C /* LxGridView */,
 				B64623AB1B3EFF7B003A8FCA /* AppDelegate.swift */,
 				B64623AD1B3EFF7B003A8FCA /* ViewController.swift */,
-				B64623AF1B3EFF7B003A8FCA /* Main.storyboard */,
-				B64623B21B3EFF7B003A8FCA /* Images.xcassets */,
-				B64623B41B3EFF7B003A8FCA /* LaunchScreen.xib */,
 				B64623A91B3EFF7B003A8FCA /* Supporting Files */,
 			);
 			path = LxGridViewDemo;
@@ -74,6 +71,9 @@
 		B64623A91B3EFF7B003A8FCA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B64623B41B3EFF7B003A8FCA /* LaunchScreen.xib */,
+				B64623AF1B3EFF7B003A8FCA /* Main.storyboard */,
+				B64623B21B3EFF7B003A8FCA /* Images.xcassets */,
 				B64623AA1B3EFF7B003A8FCA /* Info.plist */,
 			);
 			name = "Supporting Files";
